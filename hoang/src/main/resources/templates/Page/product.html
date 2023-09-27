@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+          rel="stylesheet"  type='text/css'>
+    <script src="https://use.fontawesome.com/your-embed-code.js"></script> <!-- TODO: Place your Font Awesome embed code  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous" />
+    <script src=https://code.jquery.com/jquery-3.6.0.js></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>All product</title>
+    <link href="/css/homepage.css"
+          rel="stylesheet">
+    <link href="/css/heading.css"
+          rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/product.css" rel="stylesheet">
+</head>
+<style>
+    label{
+        color: white;
+    }
+    .homebg{
+        background-image: url("/image/Pages/homePage/nen.jpg");
+        background-size: cover;
+        background-position-y: -300px;
+
+        /*background-image: url("/image/bgImg.jpg");*/
+        /*        background-color: red;*!*/
+    }
+
+</style>
+<body class="homebg">
+    <div th:replace="fragments/header :: headerPassLogin" ></div>
+    <div style="width: 70%;height: 50px;border: 1px green solid;margin: auto;display: flex;flex-direction: row;justify-content: space-between;align-items: center">
+        <div class="dropdownProduct">
+            <span>Shoes</span>
+            <div class="dropdown-content">
+                <p class="category">Nikes</p>
+                <p class="category">Adidas</p>
+                <p class="category">Puma</p>
+                <p class="category">Mizuno</p>
+                <p class="category">Kamito</p>
+            </div>
+        </div>
+        <div class="dropdownProduct">
+            <span>Ball</span>
+            <div class="dropdown-content">
+                <p class="category">Adidas</p>
+                <p class="category">Umbro</p>
+                <p class="category">Molten</p>
+                <p class="category">Pelada</p>
+                <p class="category">AKPro</p>
+                <p class="category">Động Lực</p>
+            </div>
+        </div>
+        <div class="dropdownProduct">
+            <span>Shirt</span>
+            <div class="dropdown-content">
+                <p class="category">Nike</p>
+                <p class="category">Kappa</p>
+                <p class="category">Puma</p>
+                <p class="category">Puma</p>
+                <p class="category">Adidas</p>
+            </div>
+        </div>
+        <div class="dropdownProduct">
+            <span>Safe Football Gear</span>
+            <div class="dropdown-content">
+                <p class="category">Shin pad</p>
+                <p class="category">OEM</p>
+                <p class="category">Nike</p>
+                <p class="category">Adidas</p>
+            </div>
+        </div>
+        <div class="dropdownProduct">
+            <span>Shock</span>
+            <div class="dropdown-content">
+                <p class="category">AKKA</p>
+                <p class="category">Nikes</p>
+                <p class="category">Adidas</p>
+                <p class="category">Yoga</p>
+            </div>
+        </div>
+        <div class="dropdownProduct">
+            <span>Soccer Pants</span>
+            <div class="dropdown-content">
+                <p class="category">Nikes</p>
+                <p class="category">Adidas</p>
+                <p class="category">Puma</p>
+            </div>
+        </div>
+        <div class="dropdownProduct">
+            <span>Tape</span>
+            <div class="dropdown-content">
+                <p class="category">Cramer</p>
+                <p class="category">Premier Sock Tape</p>
+                <p class="category">Meister Elite</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

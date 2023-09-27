@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+    div {
+        margin-bottom: 5px;
+    }
+    .bg {
+        /* The image used */
+        background-image: url("/image/bgimg1.jpg");
+        background-position-y: -300px;
+        background-size: cover;
+    }
+
+</style>
+<head lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://use.fontawesome.com/your-embed-code.js"></script> <!-- TODO: Place your Font Awesome embed code  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous" />
+    <script src=https://code.jquery.com/jquery-3.6.0.js></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body class="bg">
+    <div id="wrapper">
+        <div id="form-login">
+            <form  th:action="@{/index}" method="post" th:object="${loginInfo}" >
+                <h1 class="form-heading">Login</h1>
+                <input class="form-input" th:type="text" th:field="*{userName}" th:placeholder="UserName">
+                <input class="form-input" th:type="text" th:field="*{passWord}" th:placeholder="Password">
+                <button class="form-submit" > submit </button>
+            </form>
+            <div class="form-loginby">
+                Login by:
+                <img src="/image/fb.png" alt="fb" class="img-socmedia" >
+                <img src="/image/insta.png" alt="insta" class="img-socmedia" >
+                <img src="/image/GG.png" alt="GG" class="img-socmedia" >
+            </div>
+            <div class="form-foget-signup">
+                <a style="margin-right: 20px" href="#"> Forget your password?</a>
+                <button class ="form-signup" th:onclick="|window.location.href='/index/register'|" method="get"> Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!--<div th:replace="fragments/footer :: footer"></div>-->
+</body>
+</html>

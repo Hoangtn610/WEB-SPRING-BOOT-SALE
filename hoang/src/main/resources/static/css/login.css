@@ -1,0 +1,70 @@
+#wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-heading{
+    font-size: 25px;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#form-login{
+    max-width: 400px;
+    background: rgba(0, 0, 0 , 0.3);
+    flex-grow: 1;
+    padding: 30px 30px 40px;
+    box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.8);
+    border-radius: 10%;
+}
+.form-input{
+    background-color: transparent;
+    border: none;
+    outline: 1px;
+    outline-color: #f5f5f5;
+    color: #f5f5f5;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-input::placeholder{
+    color: #f5f5f5;
+}
+
+.form-submit{
+    background-color: transparent;
+    color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    width: 100%;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.img-socmedia{
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+.form-loginby{
+    display: flex;
+    justify-content: center;
+    color: #f5f5f5;
+}
+.mess-login-error{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 13px;
+}
+.form-signup{
+    background-color: transparent;
+    color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    font-size: 15px;
+}
+.form-foget-signup{
+    display: flex;
+    justify-content: space-between;
+    margin-top:15px;
+}

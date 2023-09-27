@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://use.fontawesome.com/your-embed-code.js"></script> <!-- TODO: Place your Font Awesome embed code  -->
+    <meta charset="UTF-8">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+          rel="stylesheet"  type='text/css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous" />
+    <script src=https://code.jquery.com/jquery-3.6.0.js></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <link href="/css/heading.css" rel="stylesheet">
+    <title>Title</title>
+    <style>
+        .dropdown-item {
+            background-color : black ;
+        }
+    </style>
+</head>
+<body>
+<div th:fragment="headerPassLogin">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background: transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">
+                <img style="width:70px;height: 70px" src="/image/Header/logo.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto" >
+                    <li class = "li-custom">
+                        <a class="nav-link" href="/homePage">Home</a>
+                    </li>
+                    <li class = "li-custom">
+                        <a class="nav-link" href="/product">Product</a>
+                    </li>
+                    <li class = "li-custom">
+                        <a class="nav-link" href="/aboutUS">About US</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="search-bar" type="text" placeholder="Search">
+<!--                    <button class = "btn-search">Search</button>-->
+                </form>
+                <div  class="dropdown">
+                    <img src = "/image/Header/powerOff.png" style="width:40px;height: 40px;margin-left: 10px;">
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                        <li><a class="dropdown-item" href="#">Link 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div  th:fragment="headerNotLogin">
+    <label> Myprj</label>
+    <label> Myprj1</label>
+    <label> Myprj2</label>
+    <label> Myprj3</label>
+</div>
+</body>
+</html>
