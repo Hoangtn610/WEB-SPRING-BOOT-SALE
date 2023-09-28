@@ -6,30 +6,15 @@
 </head>
 <body>
     <div class="col-second">
-        <div>
-            <label>UserName</label>
-        </div>
-        <div>
-            <input ></input>
-        </div>
-        <div>
-            <label>passWord</label>
-        </div>
-        <div>
-            <input> </input>
-        </div>
-        <div>
-            <label>Email</label>
-        </div>
-        <div>
-            <input> </input>
-        </div>
-        <div>
-            <label>Phone</label>
-        </div>
-        <div>
-            <input> </input>
-        </div>
+        <form  th:action="@{/Signup}" method="post" th:object="${SignUpInfo}" >
+            <h1 class="form-heading">Signup</h1>
+            <input class="form-input" th:type="text" th:field="*{userName}" th:placeholder="UserName">
+            <input class="form-input" th:type="text" th:field="*{passWord}" th:placeholder="Password">
+<!--            <input class="form-input" th:type="text" th:field="*{passWord}" th:placeholder="Retype Password">-->
+            <input class="form-input" th:type="text" th:field="*{email}" th:placeholder="Email">
+            <input class="form-input" th:type="text" th:field="*{fullName}" th:placeholder="Email">
+            <button class="form-submit" > submit </button>
+        </form>
     </div>
 
 

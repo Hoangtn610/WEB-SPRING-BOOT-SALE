@@ -11,7 +11,7 @@ import java.sql.Date;
 @Table(name="Users")
 public class Users {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long userID;
     @Column(name = "username")
@@ -31,4 +31,8 @@ public class Users {
     private String createdby;
     @Column (name = "modifiedby")
     private String modifiedBy;
+    @Column (name= "salt")
+    private String salt;
+    @Column (name = "email")
+    private String email;
 }

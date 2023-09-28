@@ -33,12 +33,13 @@
 <body class="bg">
     <div id="wrapper">
         <div id="form-login">
-            <form  th:action="@{/index}" method="post" th:object="${loginInfo}" >
+            <form  th:action="@{/loginEncode}" method="post" th:object="${loginInfo}" >
                 <h1 class="form-heading">Login</h1>
                 <input class="form-input" th:type="text" th:field="*{userName}" th:placeholder="UserName">
                 <input class="form-input" th:type="text" th:field="*{passWord}" th:placeholder="Password">
                 <button class="form-submit" > submit </button>
             </form>
+            <label th:text = "${messageLogin}" ></label>
             <div class="form-loginby">
                 Login by:
                 <img src="/image/fb.png" alt="fb" class="img-socmedia" >
