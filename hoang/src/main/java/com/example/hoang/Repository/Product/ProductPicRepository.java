@@ -1,4 +1,4 @@
-package com.example.hoang.Repository;
+package com.example.hoang.Repository.Product;
 
 import com.example.hoang.Entity.ProductPicture;
 import org.springframework.data.jpa.repository.JpaRepository;
