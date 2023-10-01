@@ -8,4 +8,7 @@ import java.util.List;
 public interface BranchTypeRepository  extends JpaRepository<BranchTypes,Long> {
     public BranchTypes getBranchTypesByBranchTypeID(Long branchTypeID);
     public List<BranchTypes> findAllBy();
+
+    @Override
+    <S extends BranchTypes> List<S> saveAll(Iterable<S> entities);
 }
