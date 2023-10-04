@@ -13,4 +13,7 @@ public interface ProductTypeRepository extends JpaRepository<ProductTypes,Long> 
 
     @Override
     <S extends ProductTypes> List<S> saveAll(Iterable<S> entities);
+
+    @Override
+    List<ProductTypes> findAll();
 }

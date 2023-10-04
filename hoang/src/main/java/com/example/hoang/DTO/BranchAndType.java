@@ -5,29 +5,35 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Data
-public class BranchAndType {
-    private int productType;
-    private int productBranch;
+import java.util.HashMap;
+import java.util.List;
 
-    public BranchAndType(int productType, int productBranch) {
+@Data
+public class BranchAndType extends Object {
+    private HashMap<Long,String> productType;
+    private List<HashMap<Long,String>> productBranch;
+
+    public BranchAndType(HashMap<Long, String> productType, List<HashMap<Long, String>> productBranch) {
         this.productType = productType;
         this.productBranch = productBranch;
     }
 
-    public int getProductType() {
+    public HashMap<Long, String> getProductType() {
         return productType;
     }
 
-    public void setProductType(int productType) {
+    public void setProductType(HashMap<Long, String> productType) {
         this.productType = productType;
     }
 
-    public int getProductBranch() {
+    public List<HashMap<Long, String>> getProductBranch() {
         return productBranch;
     }
 
-    public void setProductBranch(int productBranch) {
+    public void setProductBranch(List<HashMap<Long, String>> productBranch) {
         this.productBranch = productBranch;
+    }
+
+    public BranchAndType() {
     }
 }

@@ -20,4 +20,20 @@ public class BranchTypes {
     public BranchTypes() {
 
     }
+
+    public Long getBranchTypeID() {
+        return branchTypeID;
+    }
+
+    public void setBranchTypeID(Long branchTypeID) {
+        this.branchTypeID = branchTypeID;
+    }
+
+    public String getBranchTypeName() {
+        return branchTypeName;
+    }
+
+    public void setBranchTypeName(String branchTypeName) {
+        this.branchTypeName = branchTypeName;
+    }
 }

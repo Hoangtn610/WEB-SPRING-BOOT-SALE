@@ -20,4 +20,20 @@ public class ProductTypes {
     public ProductTypes() {
 
     }
+
+    public Long getProductTypeId() {
+        return productTypeId;
+    }
+
+    public void setProductTypeId(Long productTypeId) {
+        this.productTypeId = productTypeId;
+    }
+
+    public String getProductTypeName() {
+        return productTypeName;
+    }
+
+    public void setProductTypeName(String productTypeName) {
+        this.productTypeName = productTypeName;
+    }
 }

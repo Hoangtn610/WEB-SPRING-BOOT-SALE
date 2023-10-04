@@ -15,7 +15,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 //            " new com.example.hoang.DTO.BranchAndType(Product.productType,Product.productBranch) FROM Product p GROUP BY p.productBranch,p.productType")
 //    List<BranchAndType> GetBranchNameAndProductType();
     @Query("SELECT p.productBranch,p.productType FROM Product p GROUP BY p.productBranch,p.productType")
-    List<Object[]> gethoang();
+    List<Object[]> GetBranchNameAndProductType();
 
 //    Product findByProductID(Long id);
 
