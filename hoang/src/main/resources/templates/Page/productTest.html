@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hhoangg</title>
+</head>
+<body>
+<!--<ul th:each="subject : ${listProduct}">
+    <li th:text="${subject.productType.key}"/>
+    <li th:text="${subject.getProductType()}"/>
+&lt;!&ndash;    <li  th:text="${subject.getProductBranch()['key1']}" />&ndash;&gt;
+    </ul>-->
+<ul th:each="branchAndType : ${listProduct}">
+    <tr th:each="entry : ${branchAndType.productType}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+
+    <ul th:each="brand : ${branchAndType.productBranch}">
+        <tr th:each="entry : ${brand}">
+            <td th:text="${entry.key}"></td>
+            <td th:text="${entry.value}"></td>
+        </tr>
+    </ul>
+
+    </ul>
+</body>
+</html>

@@ -26,7 +26,7 @@ public class ProductService {
     public BranchTypeRepository btr;
     private Object bien;
 
-    public void getMenuProductPage() {
+    public List<BranchAndType> getMenuProductPage() {
         //query all branch and type
         List<Object[]> brandAndType = new ArrayList<>();
         brandAndType = pr.GetBranchNameAndProductType();
@@ -54,7 +54,8 @@ public class ProductService {
             BranchAndType bat1 = new BranchAndType(tamPType, listTamBraType);
             branchAndTypesList.add(bat1);
         }
-        branchAndTypesList.size();
+        return branchAndTypesList;
+        //branchAndTypesList.size();
     }
     public static Long convertToLong(Object o){
         String stringToConvert = String.valueOf(o);
