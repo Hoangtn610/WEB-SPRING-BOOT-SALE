@@ -42,7 +42,7 @@
 <div style="width: 70%;height: 50px;border: 1px green solid;margin: auto;display: flex;flex-direction: row;justify-content: space-between;align-items: center">
     <div class="dropdownProduct" th:each="branchAndType : ${listProduct}">
         <div th:each="entry : ${branchAndType.productType}" >
-            <span th:text="${entry.value}" ></span>
+            <a th:text="${entry.value}" th:href="@{'/product/type/' + ${entry.key}}" ></a>
         </div>
         <div class="dropdown-content">
             <div th:each="brand : ${branchAndType.productBranch}">
@@ -51,7 +51,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 </body>
