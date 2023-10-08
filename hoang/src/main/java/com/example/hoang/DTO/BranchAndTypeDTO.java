@@ -1,19 +1,16 @@
 package com.example.hoang.DTO;
 
-import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.List;
 
 @Data
-public class BranchAndType extends Object {
+public class BranchAndTypeDTO extends Object {
     private HashMap<Long,String> productType;
     private List<HashMap<Long,String>> productBranch;
 
-    public BranchAndType(HashMap<Long, String> productType, List<HashMap<Long, String>> productBranch) {
+    public BranchAndTypeDTO(HashMap<Long, String> productType, List<HashMap<Long, String>> productBranch) {
         this.productType = productType;
         this.productBranch = productBranch;
     }
@@ -34,6 +31,6 @@ public class BranchAndType extends Object {
         this.productBranch = productBranch;
     }
 
-    public BranchAndType() {
+    public BranchAndTypeDTO() {
     }
 }

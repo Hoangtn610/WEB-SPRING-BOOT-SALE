@@ -1,6 +1,6 @@
 package com.example.hoang.RestController;
 
-import com.example.hoang.DTO.LoginInfo;
+import com.example.hoang.DTO.LoginInfoDTO;
 import com.example.hoang.DTO.SignUpDTO;
 import com.example.hoang.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class IndexRestController {
 
     @PostMapping("/loginEncodeRest")
     @ResponseBody
-    public String LoginEncode(@RequestBody LoginInfo loginInf) {
+    public String LoginEncode(@RequestBody LoginInfoDTO loginInf) {
         String hoang = ls.LoginEncode(loginInf);
         return hoang;
     }

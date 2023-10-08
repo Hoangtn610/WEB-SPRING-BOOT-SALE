@@ -1,18 +1,13 @@
 package com.example.hoang.Controller;
 
-import com.example.hoang.DTO.LoginInfo;
+import com.example.hoang.DTO.LoginInfoDTO;
 import com.example.hoang.DTO.SignUpDTO;
 import com.example.hoang.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class IndexController {
@@ -23,13 +18,13 @@ public class IndexController {
     public ModelAndView  showLoginPage(Model model) {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("index");
-        mav.addObject("loginInfo",new LoginInfo(null, null));
+        mav.addObject("loginInfo",new LoginInfoDTO(null, null));
 
         //model.addAttribute("loginInfo", new LoginInfo(null, null));
         return mav;
     }
     @PostMapping("/loginEncode")
-    public String checkPassword(@ModelAttribute("loginInfo") LoginInfo logInf,Model model,ModelAndView mav){
+    public String checkPassword(@ModelAttribute("loginInfo") LoginInfoDTO logInf, Model model, ModelAndView mav){
         model.addAttribute("messageLogin",null);
 //    switch (loginService.checkServiceLogin(logInf)){
 //        case 1:

@@ -1,8 +1,6 @@
 package com.example.hoang.Repository.Product;
 
-import com.example.hoang.DTO.BranchAndType;
 import com.example.hoang.Entity.Product;
-import org.springframework.context.annotation.ScopeMetadata;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -19,4 +17,10 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 
 //    Product findByProductID(Long id);
 
+    @Query("SELECT p FROM Product p ORDER BY p.sold desc LIMIT 20")
+    List<Product> getProductBestSeller();
+    List<Product> findTop20ByOrderBySoldDesc();
+
+    List<Product> getProductsByProductType(int productType);
+    List<Product> getProductsByProductTypeAndProductBranch(Long productType, Long productBrand);
 }

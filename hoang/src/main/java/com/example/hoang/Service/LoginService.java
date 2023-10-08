@@ -1,8 +1,7 @@
 package com.example.hoang.Service;
 
-import com.example.hoang.DTO.LoginInfo;
+import com.example.hoang.DTO.LoginInfoDTO;
 import com.example.hoang.DTO.SignUpDTO;
-import com.example.hoang.Entity.ProductPicture;
 import com.example.hoang.Entity.Users;
 import com.example.hoang.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,21 +12,19 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.Base64;
-import java.util.List;
 
 @Service
 public class LoginService {
     @Autowired
     public UserRepository userRepository;
-    public boolean checkLoginInfo(LoginInfo logInf){
+    public boolean checkLoginInfo(LoginInfoDTO logInf){
         if(logInf.getUserName().contains("123")&& logInf.getPassWord().contains("123")){
             return true;
         }
         return false;
     }
-    public Integer checkServiceLogin(LoginInfo logInf){
+    public Integer checkServiceLogin(LoginInfoDTO logInf){
         if(logInf==null){
             return 1;
         } else if (logInf.getUserName().isEmpty() || logInf.getPassWord().isEmpty() ) {
@@ -39,7 +36,7 @@ public class LoginService {
             return 4;
         }
     }
-    public String LoginEncode(LoginInfo loginInf){
+    public String LoginEncode(LoginInfoDTO loginInf){
         //data da có trong db
         //1 check password
         //get salt tu db
