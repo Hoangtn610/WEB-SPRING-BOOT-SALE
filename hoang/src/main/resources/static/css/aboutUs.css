@@ -1,8 +1,9 @@
 .our-journey{
     width: 80%;
     margin: auto;
-    border: white 1px solid;
+    border: black 1px solid;
     height: 800px;
+    background-color: #EBEEEF;
 }
 .each-our-journey{
     display: flex;
@@ -20,7 +21,7 @@
 .grid2{
     height: 100%;
     width:20%;
-    border: blue 1px solid;
+/*    border: blue 1px solid;*/
 
 }
 .grid3{

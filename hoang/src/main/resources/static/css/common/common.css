@@ -1,33 +1,75 @@
-.white{
-    color: white;
+.black{
+    color: black;
     text-decoration: none;
 }
 
-.white:hover{
-    color: white;
+.black:hover{
+    color: black;
 }
 .font25{
     font-size: 25px;
+}
+
+.font20{
+    font-size: 20px;
+}
+
+.font-bolder{
     font-weight: bolder;
+}
+
+.font-family-corbel{
     font-family: "Corbel Light";
+}
+.font-family-bahn{
+    font-family: Bahnschrift;
+}
+
+.font-style-italic{
+    font-style: italic;
 }
 
 .font15{
     font-size: 15px;
-    font-family: Bahnschrift;
-    font-style: italic;
+}
+
+.font35{
+    font-size: 35px;
 }
 .dot{
     margin: auto;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgb(255,255,255,0.5);
+    background-color: rgb(0,0,0,0.5);
 }
 .line{
     margin: auto;
-    background-color: rgb(255,255,255,0.5);
+    background-color: rgb(0,0,0,0.5);
     width: 3px;
     height: calc(100% - 9px);
-    border: rgb(255,255,255,0.5) 1px solid;
+    border: rgb(0,0,0,0.5) 1px solid;
+}
+.border-black{
+    border: black 1px solid;
+}
+.border-aqua{
+    border: 1px aqua solid;
+}
+.display-flex-row-justify{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.display-flex-row-justify-adjust{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.bg-xam{
+    background-color: #EBEEEF;
+}
+.bg-white{
+    background-color: white;
 }

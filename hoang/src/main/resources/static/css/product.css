@@ -1,7 +1,7 @@
 .dropdownProduct {
     position: relative;
     display: inline-block;
-    color: white;
+    color: black;
     font-size: 25px;
     font-weight: bolder;
     font-family: Arial;
@@ -17,7 +17,7 @@
     padding: unset;
     font-size: 15px;
     z-index: 1;
-    border: white 1px solid;
+    border: black 1px solid;
     font-weight: lighter;
     font-style: italic;
 }
@@ -29,11 +29,12 @@
 }
 
 .category{
-    border: white 1px solid;
+    border: black 1px solid;
     margin: 0;
+    background: #EBEEEF;
 }
 .category:hover{
-    border: white 1px solid;
+    border: black 1px solid;
     margin: 0;
-    background: rgb(255,255,255,0.2);
+    background: white ;
 }
