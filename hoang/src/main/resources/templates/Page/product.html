@@ -37,19 +37,31 @@
         max-width: 95%!important;
     }
 
-    .display-flex-row-justify:hover .border-aqua
+    /* Initially, set the style for .font20.bg-white */
+
+    /* When hovering over an element with .border-aqua, change the style of .font20.bg-white */
+    .border-xam:hover .font20.bg-white {
+        transition: bottom 0.1s;
+        position: absolute!important;
+        bottom: 15px!important;
+        left: 3px!important;
+    }
+    div.border-xam:hover{
+        border: black 1px solid!important;
+        cursor:pointer;
+    }
 
 </style>
 <body class="homebg">
     <div th:replace="fragments/header :: headerPassLogin" ></div>
     <div style="width: 70%;height: 50px;border: 1px green solid;margin: auto;" class="display-flex-row-justify-adjust bg-xam" >
-        <div class="dropdownProduct" th:each="branchAndType : ${listProduct}">
-            <div th:each="entry : ${branchAndType.productType}" >
+        <div class="dropdownProduct" th:each="brandAndType : ${listProduct}">
+            <div th:each="entry : ${brandAndType.productType}" >
                 <a class="black" th:text="${entry.value}" th:href="@{'/product?pdID=' + ${entry.key}}" ></a>
                 <div class="dropdown-content">
-                    <div th:each="brand : ${branchAndType.productBranch}">
+                    <div th:each="brand : ${brandAndType.productBrand}">
                         <div th:each="entry1 : ${brand}" >
-                            <div class="category" th:text="${entry1.value}" th:href="@{'/product?pdID=' + ${entry.key} + '&bID=' + ${entry1.key}}" th:onclick="|window.location.href='/product?pdID=' + ${entry.key} + '&bID=' + ${entry1.key}|" ></div>
+                            <div class="category" th:text="${entry1.value}" th:onclick="|window.location.href='/product?pdID=' + ${entry.key} + '&bID=' + ${entry1.key}|" ></div>
                         </div>
                     </div>
                 </div>
@@ -57,33 +69,22 @@
         </div>
     </div>
     <div class="container">
-        <div class="font35">
-            Product/ProductBestSeller
+        <div class="display-flex-row-justify">
+            <div class="font35" th:text="'PRODUCT/' + ${productTitle}"></div>
+            <div class="font35">Sort By</div>
         </div>
-        <div style="border: #ffe3c3 1px solid;"class="display-flex-row-justify">
-            <div style="width: 25%;height: 95%" class="border-aqua">
-                <div style="width: 100%;height: 92%;position: relative" class="border-black">
-                    <img width="100%" height="100%" src="https://www.knvbshop.nl/media/catalog/product/cache/d81c8dc66c69ceb69419c2e7e72e896d/2/0/209058_nike-tiempo-legend-9-academy-turf-voetbalschoenen-tf-bordeauxrood-wit-blauw.jpg">
-                    <div style="position: absolute;bottom: 5px; left: 3px;" class="font20 bg-white">
-                        500$
+        <div  class=" display-flex-row" style="flex-wrap: wrap">
+            <div th:each="eachProduct : ${displayProduct}" style="width: 25%;max-height: 450px" class="border-xam" th:onclick="|window.location.href='/product/' + ${eachProduct.productID}|">
+                <div style="width: 100%;height: 85%;position: relative;border-bottom: #EBEEEF 2px solid">
+                    <img width="100%" height="100%" th:src="${eachProduct.imagePath}">
+                    <div th:text="${eachProduct.price}+'$'" style="position: absolute;bottom: 5px; left: 3px;" class="font20 bg-white">
                     </div>
                 </div>
                 <div class="font20 display-flex-row-justify">
-                    <div class="black"> Nike Tiempo 9 Academy TF ddddddddddddddddddddddđ dfđfdfdfdfdfdfdfdfdfdfdfd</div>
-                    <div>Sold:10</div>
+                    <div class="black" th:text="${eachProduct.productName}"></div>
+                    <div class="font-bolder" th:text="'Sold:'+${eachProduct.sold} "></div>
                 </div>
             </div>
-            <div style="width: 25%;height: 95%;border: 1px aqua solid">
-
-            </div>
-            <div style="width: 25%;height: 95%;border: 1px aqua solid">
-
-            </div>
-            <div style="width: 25%;height: 95%;border: 1px aqua solid">
-
-            </div>
-
-
         </div>
     </div>
 

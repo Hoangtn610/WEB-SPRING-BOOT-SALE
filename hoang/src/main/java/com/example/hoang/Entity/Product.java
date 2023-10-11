@@ -28,7 +28,7 @@ public class Product {
     @Column(name="PRODUCT_TYPE")
     private int productType;
     @Column(name="PRODUCT_BRANCH")
-    private int productBranch;
+    private int productBrand;
 
     public Product(String productName, double price, int sale, int quantity, int sold, String madeIn, String imagePath, int productType, int productBranch) {
         this.productName = productName;
@@ -39,7 +39,7 @@ public class Product {
         this.madeIn = madeIn;
         this.imagePath = imagePath;
         this.productType = productType;
-        this.productBranch = productBranch;
+        this.productBrand = productBranch;
     }
     public Product(){}
 }

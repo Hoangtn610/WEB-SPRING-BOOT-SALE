@@ -23,37 +23,34 @@
           rel="stylesheet">
     <link href="/css/footer.css" rel="stylesheet">
     <link href="/css/product.css" rel="stylesheet">
+    <link href="/css/common/common.css" rel="stylesheet">
 </head>
 <style>
     label{
         color: white;
     }
     .homebg{
-        background-image: url("/image/Pages/homePage/nen.jpg");
+/*        background-image: url("/image/Pages/homePage/nen.jpg");
         background-size: cover;
-        background-position-y: -300px;
+        background-position-y: -300px;*/
 
-        /*background-image: url("/image/bgImg.jpg");*/
-        /*        background-color: red;*!*/
+        background-color: white;
+
     }
 
 </style>
 <body class="homebg">
-<!--<div style="width: 70%;height: 50px;border: 1px green solid;margin: auto;display: flex;flex-direction: row;justify-content: space-between;align-items: center">
-    <div class="dropdownProduct" th:each="branchAndType : ${listProduct}">
-        <div th:each="entry : ${branchAndType.productType}" >
-            <a th:text="${entry.value}" th:href="@{'/product/type/' + ${entry.key}}" ></a>
-        </div>
-        <div class="dropdown-content">
-            <div th:each="brand : ${branchAndType.productBranch}">
-                <div th:each="entry : ${brand}" >
-                    <div class="category" th:text="${entry.value}" ></div>
-                </div>
+    <div th:replace="fragments/header :: headerPassLogin" ></div>
+    <div class="container-fluid" th:object="${eachProduct}">
+        <div class="display-flex-row-justify" height="50%">
+            <div style="width: 60%!important;" class="border-xam" >
+                <img width="90%" height="90%" th:src="${eachProduct.imagePath}">
+            </div>
+            <div style="width: 35%!important;" class="border-xam">
+                <div  th:text="${eachProduct.productName}" class="font35"> </div>
+                <div  th:text="${eachProduct.price} + '$'" class="font18 font-style-italic "> </div>
             </div>
         </div>
     </div>
-</div>-->
-
-
 </body>
 </html>

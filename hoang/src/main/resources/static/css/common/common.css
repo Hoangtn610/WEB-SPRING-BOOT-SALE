@@ -32,7 +32,9 @@
 .font15{
     font-size: 15px;
 }
-
+.font18{
+    font-size: 18px;
+}
 .font35{
     font-size: 35px;
 }
@@ -55,6 +57,17 @@
 }
 .border-aqua{
     border: 1px aqua solid;
+}
+
+.border-white{
+    border: 1px white solid;
+}
+.border-xam{
+    border: 2px #EBEEEF solid;
+}
+.display-flex-row {
+    display: flex;
+    flex-direction: row;
 }
 .display-flex-row-justify{
     display: flex;

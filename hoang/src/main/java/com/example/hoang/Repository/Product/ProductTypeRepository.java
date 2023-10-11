@@ -16,4 +16,6 @@ public interface ProductTypeRepository extends JpaRepository<ProductTypes,Long> 
 
     @Override
     List<ProductTypes> findAll();
+
+    ProductTypes getProductTypesByProductTypeId(Long ProductTypeID);
 }

@@ -12,8 +12,8 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 //    @Query(value = "select "+
 //            " new com.example.hoang.DTO.BranchAndType(Product.productType,Product.productBranch) FROM Product p GROUP BY p.productBranch,p.productType")
 //    List<BranchAndType> GetBranchNameAndProductType();
-    @Query("SELECT p.productBranch,p.productType FROM Product p GROUP BY p.productBranch,p.productType")
-    List<Object[]> GetBranchNameAndProductType();
+    @Query("SELECT p.productBrand,p.productType FROM Product p GROUP BY p.productBrand,p.productType")
+    List<Object[]> GetBrandNameAndProductType();
 
 //    Product findByProductID(Long id);
 
@@ -22,5 +22,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
     List<Product> findTop20ByOrderBySoldDesc();
 
     List<Product> getProductsByProductType(int productType);
-    List<Product> getProductsByProductTypeAndProductBranch(Long productType, Long productBrand);
+    List<Product> getProductsByProductTypeAndAndProductBrand(Long productType, Long productBrand);
+
+    Product findProductsByProductID(Long productID);
 }

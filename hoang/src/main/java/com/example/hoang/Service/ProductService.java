@@ -1,7 +1,7 @@
 package com.example.hoang.Service;
 
-import com.example.hoang.DTO.BranchAndTypeDTO;
-import com.example.hoang.Entity.BranchTypes;
+import com.example.hoang.DTO.BrandAndTypeDTO;
+import com.example.hoang.Entity.BrandTypes;
 import com.example.hoang.Entity.Product;
 import com.example.hoang.Entity.ProductTypes;
 import com.example.hoang.Repository.Product.BranchTypeRepository;
@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.example.hoang.Utils.CommonFuntion.convertLongToInt;
+import static com.example.hoang.Utils.CommonFuntion.convertToLong;
+
 @Service
 public class ProductService {
     @Autowired
@@ -22,15 +25,14 @@ public class ProductService {
     public ProductTypeRepository ptr;
     @Autowired
     public BranchTypeRepository btr;
-    private Object bien;
 
-    public List<BranchAndTypeDTO> getMenuProductPage() {
+    public List<BrandAndTypeDTO> getMenuProductPage() {
         //query all branch and type
         List<Object[]> brandAndType = new ArrayList<>();
-        brandAndType = pr.GetBranchNameAndProductType();
+        brandAndType = pr.GetBrandNameAndProductType();
         List<ProductTypes> ptList = ptr.findAll();
-        List<BranchTypes> bTList = btr.findAll();
-        List<BranchAndTypeDTO> branchAndTypesList = new ArrayList<>();
+        List<BrandTypes> bTList = btr.findAll();
+        List<BrandAndTypeDTO> branchAndTypesList = new ArrayList<>();
         for (ProductTypes pt : ptList) {
             List<HashMap<Long, String>> listTamBraType = new ArrayList<>();
             HashMap<Long, String> tamPType = new HashMap<>();
@@ -39,34 +41,21 @@ public class ProductService {
                     if (tamPType.isEmpty()) {
                         tamPType.put(pt.getProductTypeId(), pt.getProductTypeName());
                     }
-                    for (BranchTypes bt1 : bTList) {
-                        if (bt1.getBranchTypeID().compareTo(convertToLong(brandAndType.get(i)[0])) == 0) {
+                    for (BrandTypes bt1 : bTList) {
+                        if (bt1.getBrandTypeID().compareTo(convertToLong(brandAndType.get(i)[0])) == 0) {
                             HashMap<Long, String> tamBranType = new HashMap<>();
-                            tamBranType.put(bt1.getBranchTypeID(), bt1.getBranchTypeName());
+                            tamBranType.put(bt1.getBrandTypeID(), bt1.getBrandTypeName());
                             listTamBraType.add(tamBranType);
                             break;
                         }
                     }
                 }
             }
-            BranchAndTypeDTO bat1 = new BranchAndTypeDTO(tamPType, listTamBraType);
+            BrandAndTypeDTO bat1 = new BrandAndTypeDTO(tamPType, listTamBraType);
             branchAndTypesList.add(bat1);
         }
         return branchAndTypesList;
         //branchAndTypesList.size();
-    }
-    public static Long convertToLong(Object o){
-        String stringToConvert = String.valueOf(o);
-        Long convertedLong = Long.parseLong(stringToConvert);
-        return convertedLong;
-    }
-    public int convertLongToInt(Long value) {
-        if (value != null) {
-            return value.intValue();
-        } else {
-            // Handle the case where the Long value is null, or provide a default value if needed.
-            return -1; // You can change this to another default value if necessary.
-        }
     }
 
     public List<Product> showRequestProduct (String pdTID, String bTid){
@@ -79,8 +68,26 @@ public class ProductService {
         } else if (pdTID != null && bTid != null) {
             Long productTypeID = convertToLong(pdTID);
             Long productBrandID = convertToLong(bTid);
-            pdList = pr.getProductsByProductTypeAndProductBranch(productTypeID,productBrandID);
+            pdList = pr.getProductsByProductTypeAndAndProductBrand(productTypeID,productBrandID);
         }
         return pdList;
+    }
+
+    public String showProductTittle(String pdTID, String bTid){
+        if(pdTID == null && bTid == null){
+            return "BestSeller";
+        } else if (pdTID != null && bTid == null) {
+            String productTypeName;
+            productTypeName = ptr.getProductTypesByProductTypeId(convertToLong(pdTID)).getProductTypeName();
+            return productTypeName;
+        } else if (pdTID != null && bTid != null) {
+            String productTypeName;
+            String brandType;
+            productTypeName = ptr.getProductTypesByProductTypeId(convertToLong(pdTID)).getProductTypeName();
+            brandType = btr.getBranchTypesByBrandTypeID(convertToLong(bTid)).getBrandTypeName();
+            return productTypeName + "/" + brandType;
+        } else {
+            return "";
+        }
     }
 }
