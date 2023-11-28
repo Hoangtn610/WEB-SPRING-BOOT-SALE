@@ -1,0 +1,12 @@
+Id,Name,ParentId
+0,[Root],
+1,boot,0
+2,etc,0
+3,usr,0
+4,init.d,2
+5,sysconfig,2
+6,local,3
+7,src,3
+8,man,6
+9,src,6
+10,sbin,6
